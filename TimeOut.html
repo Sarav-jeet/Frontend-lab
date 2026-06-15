@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Sekuya&display=swap');
+    body{
+        width:100% ;
+        background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(lordShiva.jpg)
+    }
+    .title{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+        font-family: Sekuya;
+        margin-top: 10%;
+    }
+    .col{
+        width: 1000px;
+        height: 100px;
+        margin: 10px auto;
+        display:flex;
+    }
+    .col div{
+        width: 250px;
+        text-align: center;
+
+    }
+    input{
+        height: 50px;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.5) ;
+        border-color: transparent;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        font-size: 50px;
+        
+    }
+    label{
+        color: white;
+    }
+    
+</style>
+<body>
+    <div class="text">
+        <div class="title">We are coming soon</div>
+        <div class="title" id="end-date">21st April 2026 10:00pm </div>
+        <div class="col">
+            <div>
+                <input type="text" readonly>
+                <br/>
+                <label for="">Days</label>
+            </div>
+
+           <div>
+                <input type="text" readonly>
+                <br/> 
+                <label for="">Hours</label>
+            </div>
+
+           <div>
+                <input type="text" readonly>
+                <br/>
+                <label for="">Minutes</label>
+            </div>
+
+            <div>
+                <input type="text" readonly>
+                <br/>
+                <label for="">Seconds</label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let endDate="17 jun 2026 12:00 am";
+        document.querySelector("#end-date").innerText=endDate;
+
+
+        let input= document.querySelectorAll("input")
+        function clock(){
+            let end= new Date(endDate);//ye pehle vla time aur date
+            let now = new Date();// ye ab ka present date and time  
+            let diff= (end - now)/1000 ;
+            console.log(diff);
+            input[0].value= Math.floor(diff/3600/24); //yeha pe humne jo difference tha end date aur new date ke bich use day m convert kiya hai aur mathfloor ka use karke ek exact value raise karne ka try kiya hai 
+            //convert into days
+           input[1].value= Math.floor(diff/3600)%24;
+           input[2].value=Math.floor(diff/60)%60;
+           input[3].value=Math.floor(diff)%60
+        }
+        clock()
+
+        // 1day= 24hrs
+        //1hrs= 60Minutes
+        //60minute= 3600secs
+
+        setInterval(() => {
+            clock()
+        }, 1000);
+    </script>
+    
+</body>
+</html>
