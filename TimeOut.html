@@ -21,10 +21,11 @@
         margin-top: 10%;
     }
     .col{
-        width: 1000px;
-        height: 100px;
-        margin: 10px auto;
-        display:flex;
+    max-width: 1000px;
+    width: 90%;
+    height: 100px;
+    margin: 10px auto;
+    display: flex;
     }
     .col div{
         width: 250px;
@@ -45,12 +46,102 @@
     label{
         color: white;
     }
+
+
+
+
+/* Tablet */
+@media (max-width: 992px) {
+    .title {
+        font-size: 28px;
+        margin-top: 15%;
+    }
+
+    .col {
+        width: 90%;
+        gap: 10px;
+    }
+
+    .col div {
+        width: 25%;
+    }
+
+    input {
+        width: 80%;
+        font-size: 35px;
+        height: 45px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .title {
+        font-size: 22px;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .col {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        gap: 20px;
+    }
+
+    .col div {
+        width: 45%;
+    }
+
+    input {
+        width: 90%;
+        height: 45px;
+        font-size: 28px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+    .title {
+        font-size: 18px;
+    }
+
+    .col {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .col div {
+        width: 90%;
+    }
+
+    input {
+        width: 70%;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+}
     
 </style>
 <body>
     <div class="text">
         <div class="title">We are coming soon</div>
-        <div class="title" id="end-date">21st April 2026 10:00pm </div>
+        <div class="title" id="end-date">st April 2026 10:00pm </div>
         <div class="col">
             <div>
                 <input type="text" readonly>
