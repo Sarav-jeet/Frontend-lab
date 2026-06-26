@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "name": "Manan",
+        "price": 450,
+        "image": "lordShiva.jpg"
+    },
+    {
+        "id": 2,
+        "name":"Hardik",
+        "price": 390, 
+        "image": "lordShiva.jpg"
+
+    },
+    {
+        "id": 3,
+        "name":"Kl rahul",
+        "price": 180, 
+        "image": "lordShiva.jpg"
+    },
+    {
+        "id": 4,
+        "name":"Shane Watson",
+        "price": 270, 
+        "image": "lordShiva.jpg" 
+    },
+    {
+        "id": 5,
+        "name":"Faf du Plesis",
+        "price": 470, 
+        "image": "lordShiva.jpg"
+    },
+    {
+        "id": 6,
+        "name":"Glenn Phillips",
+        "price": 410, 
+        "image": "lordShiva.jpg"
+    },
+    {
+        "id": 7,
+        "name":"Mark Samuals",
+        "price": 295, 
+        "image": "lordShiva.jpg"
+    },
+    {
+        "id": 8,
+        "name":"Max Scort",
+        "price": 215, 
+        "image": "lordShiva.jpg"
+    }
+
+
+]

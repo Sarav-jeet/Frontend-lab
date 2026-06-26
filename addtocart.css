@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+body{
+    font-family: 'Lato:ital', sans-serif;
+    margin: 0;
+}
+.container{
+    width:1200px;
+    max-width:95%;
+    margin:auto;
+    text-align:center;
+    padding-top:20px;
+    transition:.4s;
+}
+svg{
+    width: 30px;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+header .iconcart{
+    position: relative;
+}
+header .iconcart span{
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+}
+
+.listProduct .item img{
+    width: 70%;
+    filter: drop-shadow(0 20px 20px #000900);
+}
+.listProduct{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+.listProduct .item{
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 10%;
+}
+.listProduct .item h2{
+    font-weight: 300;
+    font-size: large;
+}
+.listProduct .item .price{
+    letter-spacing: 3px;
+    font-size: small;
+}
+.listProduct .item button{
+    background-color: #000900;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20%;
+    margin-top: 10px;
+    border:none;
+    cursor: pointer;
+}
+.cartTab{
+    width:350px;
+    max-width:100%;
+    height:100vh;
+    background:#222;
+    color:#fff;
+
+    position:fixed;
+    top:0;
+    right:-350px;
+
+    display:grid;
+    grid-template-rows:70px 1fr 70px;
+
+    transition:.4s;
+    z-index:999;
+}
+
+body.showcart .cartTab{
+    right:0;
+}
+
+body.showcart .container{
+    transform:translateX(-170px);
+}
+
+.cartTab h1{
+    padding: 10px;
+    margin: 0;
+    font-weight: 200;
+}
+.cartTab .btn  {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+}
+.cartTab .btn button{
+    background-color: darkorange;
+    border: none;
+    font-family:'Lato:ital', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+}
+.cartTab .btn .close{
+    background-color:white;
+}
+.cartTab .listcart .item img{
+width: 100%;
+}
+.cartTab .listcart .item{
+    display: grid;
+    grid-template-columns: 50px 1fr 60px 80px ;
+    gap: 5px;
+    text-align: center;
+    align-items: center;
+}
+.listcart .quantity span{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border-radius:50% ;
+    cursor: pointer;
+}
+.listcart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: white;
+}
+.listcart .item:nth-child(even){
+    background-color: rgb(46, 44, 44);
+}
+.listcart{
+    overflow: auto;
+}
+.listcart::-webkit-scrollbar{
+    width: 0;
+}
+/* ===========================
+   Laptop
+=========================== */
+
+@media(max-width:992px){
+
+    .listProduct{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .cartTab{
+        width:320px;
+        right:-320px;
+    }
+
+    body.showcart .container{
+        transform:translateX(-150px);
+    }
+
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media(max-width:768px){
+
+    .listProduct{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cartTab{
+        width:300px;
+        right:-300px;
+    }
+
+    body.showcart .container{
+        transform:translateX(-100px);
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:480px){
+
+    .container{
+        max-width:95%;
+    }
+
+    .listProduct{
+        grid-template-columns:1fr;
+    }
+
+    .listProduct .item{
+        padding:15px;
+    }
+
+    .listProduct .item img{
+        width:65%;
+    }
+
+    /* Fullscreen cart */
+
+    .cartTab{
+        width:100%;
+        right:-100%;
+    }
+
+    body.showcart .cartTab{
+        right:0;
+    }
+
+    /* Products ko mat hila */
+
+    body.showcart .container{
+        transform:none;
+    }
+
+    .cartTab .listcart .item{
+
+        grid-template-columns:
+        60px
+        1fr
+        60px
+        70px;
+
+        font-size:14px;
+    }
+
+    .cartTab h1{
+        font-size:28px;
+    }
+
+}
+
+
+
